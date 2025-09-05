@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Download, RotateCcw, Palette, Sparkles, CheckCircle, X, Eye, Settings, Maximize2 } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
+
+const navigate = useNavigate()
 
 // Success Modal Component
 const SuccessModal = ({ isOpen, onClose, onViewDashboard }) => {
@@ -413,7 +416,7 @@ const SigilCanvas = ({ sigilData, onSave }) => {
 
   const handleViewDashboard = () => {
     setShowSuccessModal(false)
-    window.location.href = '/dashboard'
+    navigate('/dashboard') // This will work with your basename
   }
 
   const handleCloseModal = () => {
