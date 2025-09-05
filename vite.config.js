@@ -3,7 +3,11 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/sigil-generator/', // Matches https://xhrissun.github.io/sigil-generator/
+  base: '/sigil-generator/', // Only if repo name is 'sigil-generator'
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets'
+  },
   server: {
     port: 5173,
     proxy: {

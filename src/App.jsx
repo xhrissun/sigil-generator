@@ -60,7 +60,7 @@ const AuthDebugger = () => {
 function App() {
   return (
     <AuthProvider>
-      <Router>
+      <Router basename="/sigil-generator">
         <div className="min-h-screen bg-dark-900 relative overflow-hidden">
           <div className="fixed inset-0 pointer-events-none">
             <div className="absolute inset-0 bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900" />
@@ -166,7 +166,7 @@ const TarotGeneratorWithAds = () => {
         </div>
       </div>
       
-      <TarotGenerator /> {/* Use the new unified component */}
+      <TarotGenerator />
       
       <div className="px-4 py-4">
         <div className="max-w-6xl mx-auto">
