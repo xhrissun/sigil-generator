@@ -1,9 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Download, RotateCcw, Palette, Sparkles, CheckCircle, X, Eye, Settings, Maximize2 } from 'lucide-react'
-import { useNavigate } from 'react-router-dom'
-
-const navigate = useNavigate()
 
 // Success Modal Component
 const SuccessModal = ({ isOpen, onClose, onViewDashboard }) => {
@@ -102,7 +99,6 @@ const SuccessModal = ({ isOpen, onClose, onViewDashboard }) => {
 }
 
 const SigilCanvas = ({ sigilData, onSave }) => {
-  const navigate = useNavigate() // Add this line
   const canvasRef = useRef(null)
   const [isAnimating, setIsAnimating] = useState(false)
   const [strokeColor, setStrokeColor] = useState('#6366f1')
@@ -417,7 +413,7 @@ const SigilCanvas = ({ sigilData, onSave }) => {
 
   const handleViewDashboard = () => {
     setShowSuccessModal(false)
-    navigate('/dashboard') // This will respect your basename
+    window.location.href = '/sigil-generator/dashboard'
   }
 
   const handleCloseModal = () => {
